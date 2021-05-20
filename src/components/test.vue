@@ -36,13 +36,13 @@
             </div>
             <div class="flex items-center justify-center text-base" v-else>
 
-            <button type='button' class='line-through text-2xl font-bold text-green-600' >Completed</button>
+            <button type='button' class='line-through text-4xl font-bold text-green-600' >Done</button>
             </div>
 
           </li>
             <alert v-if="isAlert" @close='close' ></alert>
            <li class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4  ">
-                <input v-model="newTask" @keyup.enter="addNew" type="text" class="">
+                <input v-model="newTask" @keyup.enter="addNew" type="text" class="border" placeholder="Tapez votre tâche">
                 <button class="pl-2 font-bold" @click="addNew">Add Task</button>
             </li>
             
