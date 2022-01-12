@@ -34,7 +34,7 @@
                         
                  
             </div>
-            <div class="flex items-center justify-center text-base" v-else>
+            <div class="flex items-center justify-center text-base" v-if='task.isDone'>
 
             <button type='button' class='line-through text-4xl font-bold text-green-600' >Done</button>
             </div>
@@ -80,7 +80,7 @@ export default {
 
   methods: {
         addNew(){
-          if(this.newTask != ''){
+          if(this.newTask){
             this.taskList.push({content: this.newTask, isDone: false, editing: false}) 
             this.newTask = ''
           } else {
@@ -93,15 +93,12 @@ export default {
         completeTask(task){
           
           task.isDone = true
-          console.log(task.isDone)
         },
         closed(task){
             this.taskList.splice(this.taskList.indexOf(task), 1)
         }, 
         edit(task){
           task.editing = false
-          
-
         },
         hideAlert(){
             this.showAlert = false
